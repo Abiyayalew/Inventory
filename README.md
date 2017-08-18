@@ -16,9 +16,9 @@
 ## Project Approaches:
  
  *	 Created and implemented using three layer architecture.
- *	 Used form based authentication. 
- *	 Used Javascript to validate form controls.
- *	 Optimizing code using reusable code.
+ *	 Implemented form based authentication. 
+ *	 Form control validation, Printing and date time picker using JavaScript’.
+ *	 Optimizing code using reusability.
 
 
  
