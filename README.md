@@ -2,7 +2,7 @@
 
 ## Project Overview:
  
- Inventory Management system developed by ASP.NET as front end and SQLSERVER as back end.The system used to keep truck of receive and sales transaction of business.
+ Inventory Management System developed by ASP.NET as front end and SQL SERVER as back end.The system used to keep truck of receives and sales transaction of business.
 
 ## Running Instruction:
 
