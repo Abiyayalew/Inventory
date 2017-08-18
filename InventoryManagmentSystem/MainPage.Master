@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainPage.master.cs" Inherits="InvontryManagmentSystem.MainPage" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainPage.master.cs" Inherits="InventoryManagmentSystem.MainPage" %>
 
 <!DOCTYPE html>
 

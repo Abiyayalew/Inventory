@@ -7,7 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace InvontryManagmentSystem {
+namespace InventoryManagmentSystem
+{
     
     
     public partial class Product1 {

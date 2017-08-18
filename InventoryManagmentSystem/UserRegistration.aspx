@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MainPage.Master" AutoEventWireup="true" CodeBehind="UserRegistration.aspx.cs" Inherits="InvontryManagmentSystem.UserRegistration" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MainPage.Master" AutoEventWireup="true" CodeBehind="UserRegistration.aspx.cs" Inherits="InventoryManagmentSystem.UserRegistration" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" runat="server">
     <div class="container">

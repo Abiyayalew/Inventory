@@ -5,7 +5,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using DALayer;
 
-namespace InvontryManagmentSystem
+namespace InventoryManagmentSystem
 {
     public partial class Receive : System.Web.UI.Page
     {

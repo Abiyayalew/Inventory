@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace InvontryManagmentSystem {
+namespace InventoryManagmentSystem {
     
     
     public partial class PriceConfig {

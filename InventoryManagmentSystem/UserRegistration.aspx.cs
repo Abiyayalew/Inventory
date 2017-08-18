@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
-using BLayer;
+
 using DALayer;
 using System.Data;
 
-namespace InvontryManagmentSystem
+namespace InventoryManagmentSystem
 {
     public partial class UserRegistration : System.Web.UI.Page
     {

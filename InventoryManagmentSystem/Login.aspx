@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="InvontryManagmentSystem.Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="InventoryManagmentSystem.Login" %>
 
 <!DOCTYPE html>
 
@@ -17,7 +17,9 @@
             <asp:TextBox ID="txtUserName" runat="server" placeholder="UserName"  ></asp:TextBox>
             <asp:TextBox ID="txtPassword" runat="server" placeholder="Password"  TextMode="Password"></asp:TextBox>
             <asp:Button ID="btnLogin" runat="server"  Text="Login" CssClass ="btn" OnClick="btnLogin_Click1" />
+
             <asp:Label ID="lblmessage" runat="server" Text=""></asp:Label>
+            <asp:Button ID="Button1" runat="server" Text="Button" style="margin-top: 0px" />
         </form>
         
     </div>

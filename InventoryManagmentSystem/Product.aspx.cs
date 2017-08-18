@@ -8,7 +8,7 @@ using BLayer;
 using DALayer;
 using System.Data;
 
-namespace InvontryManagmentSystem
+namespace InventoryManagmentSystem
 {
     public partial class Product1 : System.Web.UI.Page
     {

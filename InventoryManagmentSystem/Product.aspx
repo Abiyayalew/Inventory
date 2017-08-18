@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MainPage.Master" AutoEventWireup="true" CodeBehind="Product.aspx.cs" Inherits="InvontryManagmentSystem.Product1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MainPage.Master" AutoEventWireup="true" CodeBehind="Product.aspx.cs" Inherits="InventoryManagmentSystem.Product1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" runat="server">
 
     <script>

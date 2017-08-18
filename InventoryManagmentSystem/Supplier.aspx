@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MainPage.Master" AutoEventWireup="true" CodeBehind="Supplier.aspx.cs" Inherits="InvontryManagmentSystem.Supplier" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MainPage.Master" AutoEventWireup="true" CodeBehind="Supplier.aspx.cs" Inherits="InventoryManagmentSystem.Supplier" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" runat="server">
     <div class="container">
         <h1>Supplier Registration Form</h1>
