@@ -1,0 +1,51 @@
+﻿
+
+h2
+{
+    background-color:#0094ff;
+    padding:4px 4px;
+    border-radius:5px;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.container
+{
+    width:650px;    
+}
+.form
+{
+    border-spacing :15px;
+}
+.frmRS
+{
+    border-spacing :10px;
+}
+
+.textboxs
+{
+   border-radius :3px;
+   width :200px;
+   height:20px;
+
+}
+
+.btn
+{
+    border-radius :5px;
+    margin:10px 10px;
+}
+.Buttons
+{
+  height:25px;
+  width:70px;
+  border-radius :5px; 
+  margin-left:10px; 
+}
+.Grid
+{
+
+}
+
+
+

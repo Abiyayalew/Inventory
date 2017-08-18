@@ -1,0 +1,219 @@
+USE [master]
+GO
+/****** Object:  Database [Inventory]    Script Date: 8/17/2017 4:59:16 PM ******/
+CREATE DATABASE [Inventory]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'Inventory', FILENAME = N'C:\Program Files (x86)\Microsoft SQL Server\MSSQL11.MSSQLSERVER\MSSQL\DATA\Inventory.mdf' , SIZE = 4096KB , MAXSIZE = UNLIMITED, FILEGROWTH = 1024KB )
+ LOG ON 
+( NAME = N'Inventory_log', FILENAME = N'C:\Program Files (x86)\Microsoft SQL Server\MSSQL11.MSSQLSERVER\MSSQL\DATA\Inventory_log.ldf' , SIZE = 1024KB , MAXSIZE = 2048GB , FILEGROWTH = 10%)
+GO
+ALTER DATABASE [Inventory] SET COMPATIBILITY_LEVEL = 110
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [Inventory].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [Inventory] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [Inventory] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [Inventory] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [Inventory] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [Inventory] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [Inventory] SET AUTO_CLOSE OFF 
+GO
+ALTER DATABASE [Inventory] SET AUTO_CREATE_STATISTICS ON 
+GO
+ALTER DATABASE [Inventory] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [Inventory] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [Inventory] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [Inventory] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [Inventory] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [Inventory] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [Inventory] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [Inventory] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [Inventory] SET  DISABLE_BROKER 
+GO
+ALTER DATABASE [Inventory] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [Inventory] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [Inventory] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [Inventory] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [Inventory] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [Inventory] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [Inventory] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [Inventory] SET RECOVERY FULL 
+GO
+ALTER DATABASE [Inventory] SET  MULTI_USER 
+GO
+ALTER DATABASE [Inventory] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [Inventory] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [Inventory] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [Inventory] SET TARGET_RECOVERY_TIME = 0 SECONDS 
+GO
+USE [Inventory]
+GO
+/****** Object:  Table [dbo].[tbl_Login]    Script Date: 8/17/2017 4:59:16 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[tbl_Login](
+	[UserId] [int] IDENTITY(1,1) NOT NULL,
+	[UserName] [nvarchar](50) NULL,
+	[Email] [nvarchar](50) NULL,
+	[Password] [nvarchar](50) NULL,
+	[IsAdmin] [bit] NULL,
+ CONSTRAINT [PK_tbl_Login] PRIMARY KEY CLUSTERED 
+(
+	[UserId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[tbl_Manufacturer]    Script Date: 8/17/2017 4:59:16 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[tbl_Manufacturer](
+	[ManufacturerID] [nvarchar](50) NOT NULL,
+	[ManufacturerName] [nvarchar](50) NULL,
+ CONSTRAINT [PK_tbl_Manufacturer] PRIMARY KEY CLUSTERED 
+(
+	[ManufacturerID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[tbl_Product]    Script Date: 8/17/2017 4:59:16 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[tbl_Product](
+	[ProductId] [nvarchar](50) NOT NULL,
+	[ProductName] [nvarchar](50) NULL,
+	[MinQty] [int] NULL,
+	[ManufId] [nvarchar](50) NULL,
+ CONSTRAINT [PK_tbl_product] PRIMARY KEY CLUSTERED 
+(
+	[ProductId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[tbl_ProductDetail]    Script Date: 8/17/2017 4:59:16 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[tbl_ProductDetail](
+	[PDetailId] [int] IDENTITY(1,1) NOT NULL,
+	[ProductId] [nvarchar](50) NULL,
+	[SupplierId] [nvarchar](50) NULL,
+	[ManufId] [nvarchar](50) NULL,
+	[RecId] [nvarchar](50) NULL,
+	[RecDate] [date] NULL,
+	[SalesId] [nvarchar](50) NULL,
+	[SalesDate] [date] NULL,
+	[UnitPrice] [money] NULL,
+	[Quantity] [int] NULL,
+	[UnitCost] [money] NULL,
+	[CurrentCost] [money] NULL,
+	[Transactiontype] [char](1) NULL,
+	[Void] [bit] NULL,
+ CONSTRAINT [PK_tbl_ProductDetail] PRIMARY KEY CLUSTERED 
+(
+	[PDetailId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[tbl_Receive]    Script Date: 8/17/2017 4:59:16 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[tbl_Receive](
+	[RecId] [int] NOT NULL,
+	[RecDate] [date] NULL,
+	[SupplierId] [nvarchar](50) NULL,
+	[ManufId] [nvarchar](50) NULL,
+	[ProductId] [nvarchar](50) NOT NULL,
+	[Quantity] [int] NULL,
+	[UnitCost] [money] NULL,
+ CONSTRAINT [PK_Tbl_Receive] PRIMARY KEY CLUSTERED 
+(
+	[RecId] ASC,
+	[ProductId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[tbl_Sales]    Script Date: 8/17/2017 4:59:16 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[tbl_Sales](
+	[SalesId] [int] NOT NULL,
+	[SalesDate] [date] NULL,
+	[SupplierId] [nvarchar](50) NULL,
+	[ManufId] [nvarchar](50) NULL,
+	[ProductId] [nvarchar](50) NOT NULL,
+	[Quantity] [int] NULL,
+	[UnitPrice] [money] NULL,
+	[Void] [bit] NULL,
+ CONSTRAINT [PK_tbl_Sales] PRIMARY KEY CLUSTERED 
+(
+	[SalesId] ASC,
+	[ProductId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[tbl_Supplier]    Script Date: 8/17/2017 4:59:16 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[tbl_Supplier](
+	[SupplierId] [nvarchar](50) NULL,
+	[SupplierName] [nvarchar](50) NULL,
+	[Address] [nvarchar](50) NULL,
+	[PhoneNumber] [nchar](10) NULL,
+	[Email] [nvarchar](50) NULL
+) ON [PRIMARY]
+
+GO
+USE [master]
+GO
+ALTER DATABASE [Inventory] SET  READ_WRITE 
+GO

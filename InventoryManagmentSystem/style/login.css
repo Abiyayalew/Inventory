@@ -1,0 +1,67 @@
+﻿body {
+background-color:#eee;
+}
+.frmlogin
+{
+    width:400px;
+    height :300px;
+    background:#fff;
+    border-radius:10px;
+    position:absolute;
+    top:10%;
+    left:30%;
+    border:3px solid black;
+}
+    .frmlogin h1
+    {
+        font-family :Calibri ;
+        font-size :20px;
+        color:#fff;
+        background-color :#6185df;
+        text-align :left;
+        padding-left:15px;
+        border-left:2px solid #244189;
+        border-right :2px solid #244189;
+        line-height :2;
+        text-transform :uppercase ;
+    }
+input[type=text], input[type=password]
+{
+    width:350px;
+    padding: 12px 20px;
+    margin:10px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+ input:focus
+{
+    border: 1px solid #f90;
+    outline:none ;
+}
+ .btn
+  {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin:10px 20px;
+    border: none;
+    cursor: pointer;
+    float:right;
+    border-radius :5px;
+    
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+lblmessage
+{
+    float : left;
+    padding-left:15px;
+    color:red;
+}
+
+
+
+

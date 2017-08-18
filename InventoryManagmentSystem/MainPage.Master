@@ -1,0 +1,79 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainPage.master.cs" Inherits="InvontryManagmentSystem.MainPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Inventory Management System</title>
+    <meta http-equiv="Content-Language" content="English" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="style/style.css" rel="stylesheet" />
+    <link href="style/common.css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/ui-lightness/jquery-ui.css"/>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="Script/jquery.validate.js"></script>
+    
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="wrap">
+
+            <div id="header">
+                <h1> Inventory Management System</h1>
+                <div id="login">
+                    <asp:Label ID="loginuser" runat="server" Text="LoginUser"></asp:Label>
+                    <asp:Button ID="btnlogout" runat="server" formnovalidate="formnovalidate" Text="Logout"  OnClick="btnlogout_Click" CausesValidation="False" />
+                 </div>
+            </div>
+            <div style="clear: both;"></div>
+            <div>
+                <div class="right">
+
+                    <asp:ContentPlaceHolder ID="Content" runat="server">
+                    </asp:ContentPlaceHolder>
+
+                </div>
+                <div class="left">
+                    <ul>
+                        <li>
+                            <h2>Admin</h2>
+                            <ul>
+                                <li><a href="UserRegistration.aspx" id="user" runat ="server">User_Registration</a></li>
+                                <li><a href="PriceConfig.aspx" id="price" runat="server">Price_Configration</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h2>User</h2>
+                            <ul>
+                                <li><a  href="Receive.aspx" id="receive" runat="server">Receving</a></li>
+                                <li><a href="Sales.aspx" id="sales" runat="server">Sales</a></li>
+                                <li><a href="Product.aspx" id="product" runat="server">Product_Registration</a></li>
+                                <li><a href="Supplier.aspx" id="suppliers" runat="server">Suppliers_Registration</a></li>
+                                
+                            </ul>
+                        </li>
+                        <li>
+                            <h2>Report</h2>
+                            <ul>
+                                <li><a href="#">List of Items </a></li>
+                                <li><a href="#">List of Supplier</a></li>
+                                <li><a href="#">BinCard</a></li>
+                            </ul>
+                                
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div style="clear: both;"></div>
+            <div id="footer">
+                <h2>Copyright @ 2017</h2>
+            </div>
+
+
+        </div>
+    </form>
+
+    
+</body>
+</html>
